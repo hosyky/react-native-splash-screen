@@ -22,7 +22,7 @@ public class SplashScreen {
     /**
      * 打开启动屏
      */
-    public static void show(final Activity activity, final int themeResId, final boolean fullScreen, final string text) {
+    public static void show(final Activity activity, final int themeResId, final boolean fullScreen, final String text) {
         if (activity == null) return;
         mActivity = new WeakReference<Activity>(activity);
         activity.runOnUiThread(new Runnable() {
@@ -50,7 +50,7 @@ public class SplashScreen {
     /**
      * 打开启动屏
      */
-    public static void show(final Activity activity, final boolean fullScreen, final string text) {
+    public static void show(final Activity activity, final boolean fullScreen, final String text) {
         int resourceId = fullScreen ? R.style.SplashScreen_Fullscreen : R.style.SplashScreen_SplashTheme;
 
         show(activity, resourceId, fullScreen);
@@ -59,7 +59,7 @@ public class SplashScreen {
     /**
      * 打开启动屏
      */
-    public static void show(final Activity activity, final string text) {
+    public static void show(final Activity activity, final String text) {
         show(activity, false);
     }
 
