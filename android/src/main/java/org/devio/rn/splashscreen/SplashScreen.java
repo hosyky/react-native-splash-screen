@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.os.Build;
 import android.view.WindowManager;
+import android.widget.TextView;
 
 import java.lang.ref.WeakReference;
 
@@ -33,8 +34,8 @@ public class SplashScreen {
                     //TODO: show text here.
                     mSplashDialog.setContentView(R.layout.launch_screen);
                     mSplashDialog.setCancelable(false);
-                    TextView text = (TextView)dialog.findViewById(R.id.lblText);
-                    text.setText(text);
+                    TextView lblText = (TextView)mSplashDialog.findViewById(R.id.lblText);
+                    lblText.setText(text);
 
                     if (fullScreen) {
                         setActivityAndroidP(mSplashDialog);
@@ -53,14 +54,14 @@ public class SplashScreen {
     public static void show(final Activity activity, final boolean fullScreen, final String text) {
         int resourceId = fullScreen ? R.style.SplashScreen_Fullscreen : R.style.SplashScreen_SplashTheme;
 
-        show(activity, resourceId, fullScreen);
+        show(activity, resourceId, fullScreen, text);
     }
 
     /**
      * 打开启动屏
      */
     public static void show(final Activity activity, final String text) {
-        show(activity, false);
+        show(activity, false, text);
     }
 
     /**
