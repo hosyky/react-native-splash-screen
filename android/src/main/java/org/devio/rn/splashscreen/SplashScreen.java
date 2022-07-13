@@ -22,7 +22,7 @@ public class SplashScreen {
     /**
      * 打开启动屏
      */
-    public static void show(final Activity activity, final int themeResId, final boolean fullScreen) {
+    public static void show(final Activity activity, final int themeResId, final boolean fullScreen, final string text) {
         if (activity == null) return;
         mActivity = new WeakReference<Activity>(activity);
         activity.runOnUiThread(new Runnable() {
@@ -30,8 +30,12 @@ public class SplashScreen {
             public void run() {
                 if (!activity.isFinishing()) {
                     mSplashDialog = new Dialog(activity, themeResId);
+                    //TODO: show text here.
                     mSplashDialog.setContentView(R.layout.launch_screen);
                     mSplashDialog.setCancelable(false);
+                    TextView text = (TextView)dialog.findViewById(R.id.lblText);
+                    text.setText(text);
+
                     if (fullScreen) {
                         setActivityAndroidP(mSplashDialog);
                     }
@@ -46,7 +50,7 @@ public class SplashScreen {
     /**
      * 打开启动屏
      */
-    public static void show(final Activity activity, final boolean fullScreen) {
+    public static void show(final Activity activity, final boolean fullScreen, final string text) {
         int resourceId = fullScreen ? R.style.SplashScreen_Fullscreen : R.style.SplashScreen_SplashTheme;
 
         show(activity, resourceId, fullScreen);
@@ -55,7 +59,7 @@ public class SplashScreen {
     /**
      * 打开启动屏
      */
-    public static void show(final Activity activity) {
+    public static void show(final Activity activity, final string text) {
         show(activity, false);
     }
 

@@ -20,7 +20,7 @@ static UIView* loadingView = nil;
 }
 RCT_EXPORT_MODULE(SplashScreen)
 
-+ (void)show {
++ (void)show:(NSString*)text {
     if (!addedJsLoadErrorObserver) {
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(jsLoadError:) name:RCTJavaScriptDidFailToLoadNotification object:nil];
         addedJsLoadErrorObserver = true;

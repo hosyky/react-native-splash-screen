@@ -26,8 +26,8 @@ public class SplashScreenModule extends ReactContextBaseJavaModule{
      * 打开启动屏
      */
     @ReactMethod
-    public void show() {
-        SplashScreen.show(getCurrentActivity());
+    public void show(String text) {
+        SplashScreen.show(getCurrentActivity(), text);
     }
 
     /**
