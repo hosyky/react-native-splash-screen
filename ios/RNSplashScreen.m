@@ -67,7 +67,7 @@ RCT_EXPORT_METHOD(hide) {
 }
 
 RCT_EXPORT_METHOD(show) {
-    [RNSplashScreen show];
+    [RNSplashScreen show: @""];
 }
 
 @end
